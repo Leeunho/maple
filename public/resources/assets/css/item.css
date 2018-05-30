@@ -68,8 +68,8 @@
 .maple-search__item {width: 100%; border-radius: 4px; background: #fff; border: 1px solid #e9eff4; box-shadow: 0 1px 1px 0 rgba(0,0,0,.12); padding: 15px; margin-bottom: 8px; display: flex;}
 .maple-search__item-img {display: flex; align-items: center;}
 .maple-search__item-img span {display: inline-block; margin: 0 10px;}
-.maple-search__item-mob {width: 96px; height: 96px; display: flex; align-items: center; justify-content: center;}
-.maple-search__item-mob img {object-fit: cover; max-width: 100%; max-height: 100%;}
+.maple-search__item-mob {width: 96px; height: 96px; line-height: 96px; text-align: center;}
+.maple-search__item-mob img {object-fit: cover; max-width: 100%; max-height: 100%; vertical-align: middle;}
 .maple-search__item-content {flex: 1 1 auto; padding-left: 10px; display: flex; align-items: center;}
 .maple-search__item-text {/*font-family: Maplestory_Light;*/}
 .maple-search__item-text p {margin-top: 8px; /*font-family: Maplestory_Light;*/ text-align: center; color: #696969; font-size: 14px;}

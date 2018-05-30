@@ -11,9 +11,11 @@ class Controller
 
 	protected $viewFolder = SOURCE . '/view';
 
-	protected $title = '메이플스토리 정보 | maple.unoup.co.kr';
+	protected $title = '메이플스토리 정보 | maple.unoup.co.kr - 무릉 전적 검색';
 
-	protected $description = '무릉도장 기록을 확인할 수 있습니다. 랭킹, 유저 수 등 상세 정보를 할 수 있습니다. 다양한 메이플 관련 자료를 볼 수 있습니다.';
+	// protected $description = '무릉도장 기록을 확인할 수 있습니다. 랭킹, 유저 수 등 상세 정보를 할 수 있습니다. 다양한 메이플 관련 자료를 볼 수 있습니다.';
+
+	protected $description = '무릉도장 전적, 메이플 정보등을 볼 수 있습니다. 다양한 메이플 관련 자료를 확인하세요.';
 
 	protected $keywords = '메이플스토리, 메이플, 메이플 무릉도장, 무릉도장, 메이플 전적 검색, 메이플 무릉 전적 검색, 무릉 전적 검색, 무릉도장 전적 검색, 랭킹, 전적검색';
 
@@ -36,7 +38,7 @@ class Controller
 
 	public function assets( $link )
 	{
-		return '/assets/' . $link;
+		return '/assets/' . trim( $link, '/' );
 	}
 
 	public function success( $msg )
@@ -175,6 +177,26 @@ class Controller
 	        }
 	    }
 	    return false;
+	}
+
+	function num2han($num) { 
+		// if(!ctype_digit($num)) $num = (string)$num; 
+		$won = array('', '만', '억', '조', '경', '해'); 
+		$rtn = ''; 
+		$len = strlen($num); 
+		for($i = 0, $cnt = ceil($len/4); $i < $cnt; $i++) { 
+			$spos = $len - ($i + 1) * 4; 
+			$epos = 4; 
+
+			if($spos < 0) { 
+				$epos += $spos; $spos = 0; 
+			} 
+
+			if($tmp = (int)substr($num, $spos, $epos)) {
+				$rtn = $tmp.$won[$i].$rtn; 
+			}
+		} 
+		return $rtn; 
 	}
 
 }

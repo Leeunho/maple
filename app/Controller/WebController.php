@@ -17,7 +17,6 @@ class WebController extends Controller
 		$serverCountList = DB::fetchAll('select server, COUNT(server) as count FROM dojangRanking where date = (SELECT max(date) FROM dojangRanking) GROUP BY server order by count desc');
 
 		require_once $this->viewFolder . '/header.php';
-		require_once $this->viewFolder . '/aside.php';
 		require_once $this->viewFolder . '/index.php';
 		require_once $this->viewFolder . '/footer.php';
 	}
@@ -52,21 +51,21 @@ class WebController extends Controller
 		}
 
 		require_once $this->viewFolder . '/header.php';
-		require_once $this->viewFolder . '/aside.php';
 		require_once $this->viewFolder . '/search.php';
 		require_once $this->viewFolder . '/footer.php';
 	}
 
 	public function dojang($floor = 1)
-	{
+	{ 
 		$dojangData = DB::fetchAll('SELECT * FROM dojangData');
 		$mobData = DB::fetch('SELECT * FROM dojangData where floor = ?', array( $floor ));
+
+		if ( !$mobData ) $this->move('/dojang/1');
 
 		$this->title = $mobData->name . ' - 무릉도장 정보 - maplestory';
 		$this->description = $mobData->name . ' / 층수 - ' . $mobData->floor . '층 / 레벨 - ' . $mobData->level . ' / 체력 - ' . $mobData->hp;
 					
 		require_once $this->viewFolder . '/header.php';
-		require_once $this->viewFolder . '/aside.php';
 		require_once $this->viewFolder . '/dojang.php';
 		require_once $this->viewFolder . '/footer.php';
 	}
@@ -78,14 +77,13 @@ class WebController extends Controller
 		$loglist = DB::fetchAll('SELECT * FROM searchlog order by date desc limit 0, 100');
 
 		require_once $this->viewFolder . '/header.php';
-		require_once $this->viewFolder . '/aside.php';
 		require_once $this->viewFolder . '/log.php';
 		require_once $this->viewFolder . '/footer.php';
 	}
 
 	public function test()
 	{
-		
+
 	}
 
 }

@@ -37,7 +37,7 @@
 								<img src="<?=$user->img?>" alt="<?=$user->name?>">
 								<span>vs</span>
 								<div class="maple-search__item-mob">
-									<img src="/resources/assets/images/dojang/<?=$user->layer?>.png" alt="무릉도장">
+									<a href="/dojang/<?=$user->layer?>"><img src="<?=$this->assets('/images/dojang/' . $user->layer)?>.png" alt="무릉도장"></a>
 								</div>
 							</div>
 							<div class="maple-search__item-content">

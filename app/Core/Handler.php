@@ -11,7 +11,7 @@ class Handler
 	}
 
 	public static function exception( $error ) {
-		// echo $error->getMessage();
+		echo $error->getMessage();
 		echo 'exception';
 	}
 

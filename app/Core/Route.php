@@ -61,11 +61,12 @@ class Route
 		return $uri;
 	}
 
-	public function getArgs()
+	public function getArgs( $o_uri )
 	{
 		$uri = trim( $this->getURI(), '/' );
+		$cnt = count(explode('/', $o_uri)) - 2;
 
-		return array_slice( explode( '/', $uri ), 1 );
+		return array_slice( explode( '/', $uri ), $cnt );
 	}
 
 	public function dispatch()
@@ -78,12 +79,12 @@ class Route
 			foreach ( $this->{ $method } as $route ) {
 				if ( preg_match( $route['uri'], $uri ) ) {
 					$route['controller'] = new $route['controller']();
-					return $route['controller']->{ $route['action'] }( ...$this->getArgs() );
+					return $route['controller']->{ $route['action'] }( ...$this->getArgs( $uri ) );
 				}
 			}
 		}
 
-		// header('Location:/');
+		header('Location:/');
 	}
 
 }

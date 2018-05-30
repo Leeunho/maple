@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="<?=$this->assets('css/style.css')?>">
 	<link rel="stylesheet" href="<?=$this->assets('css/main.css')?>">
 	<link rel="stylesheet" href="<?=$this->assets('css/item.css')?>">
+	<link rel="stylesheet" href="<?=$this->assets('css/dojang.css')?>">
+	<link rel="stylesheet" href="<?=$this->assets('css/label.css')?>">
 	<link rel="stylesheet" href="<?=$this->assets('fontawesome/css/fontawesome-all.css')?>">
 	<script type="text/javascript" src="<?=$this->assets('jquery/jquery-3.3.1.min.js')?>"></script>
 </head>
@@ -71,31 +73,21 @@
 				<?php }else{?>
 					<li><a href="/">홈</a></li>
 				<?php }?>
+
 				<?php if ( strpos($_SERVER['REQUEST_URI'], '/dojang') > -1 ){?>
 					<li class="active"><a href="/dojang">무릉도장</a></li>
 				<?php }else{?>
 					<li><a href="/dojang">무릉도장</a></li>
+				<?php }?>
+
+				<?php if ( strpos($_SERVER['REQUEST_URI'], '/label/master') > -1 ){?>
+					<li class="active"><a href="/label/master">마스터라벨</a></li>
+				<?php }else{?>
+					<li><a href="/label/master">마스터라벨</a></li>
 				<?php }?>
 			</ul>
 		</div>
 	</nav>
 	<!-- //navigation -->
 
-	<style type="text/css">
-		.header {border-bottom: none;}
-		nav {
-			position: fixed; top: 64px;
-			width: 100%; height: 40px;
-			/*background: rgba(255, 121, 76, 0.75);*/
-			background: #fe9a78;
-			z-index: 1001;
-		}
-
-		nav .container {padding: 0;}
-
-		nav ul {padding: 0 15px;}
-
-		nav ul li {display: inline-block; color: #fff; margin-right: 10px; font-size: 15px;}
-		nav ul li.active a {border-bottom-color: #fff;}
-		nav ul li a {display: inline-block; height: 40px; padding: 11px 13px 7px; border-bottom: 3px solid transparent; font-family: Nanum Gothic;}
-	</style>
+<article>

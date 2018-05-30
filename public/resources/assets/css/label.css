@@ -1,0 +1,24 @@
+/* label thumbnail page */
+.label_thumb-list {box-shadow: 0 1px 1px 0 rgba(0,0,0,0.12); border: 1px solid #e9eff4; border-radius: 3px;}
+.label_thumb {width: 100%; padding: 15px 20px; background: #fff; border-bottom: 1px solid #e9eff4; /*border: 1px solid #e9eff4; box-shadow: 0 1px 1px 0 rgba(0,0,0,0.12); margin-bottom: 20px;	 border-radius: 3px;*/}
+.label_thumb-title {display: table; width: 100%;}
+
+.label_thumb-info {display: table-cell;}
+.label_thumb-name {color: #5e5e5e; font-size: 16px; margin-bottom: 5px; font-weight: bold;}
+.label_thumb-duration {color: #5e5e5e; font-size: 14px; margin-bottom: 5px;}
+
+.label_thumb-detail {display: table-cell; text-align: right;}
+.label_thumb-btn {display: inline-block; width: 70px; height: 30px; background: #6794dc; color: #fff; text-align: center; border-radius: 3px; line-height: 30px; font-size: 12px; font-family: Nanum Gothic; box-shadow: 0 1px 1px 0 rgba(0,0,0,0.12);}
+
+.label_thumb-img {padding: 10px 10px 10px 0;}
+.label_thumb-img img {width: 100px; background: #f4f7fc; border: 1px solid #cfd7e2; padding: 8px; border-radius: 4px;}
+.label_thumb-img img:first-child {margin-right: 5px;}
+
+/* label detail page */
+.label-item {width: 100%; padding: 15px; background: #fff; border: 1px solid #e9eff4; margin-bottom: 20px; border-radius: 3px; /*white-space: nowrap;*/}
+.label-item-title {font-weight: bold; color: #434343;}
+/*.label-item img {float: left; max-width: 12.5%;}*/
+.label-item-category {margin-bottom: 10px; font-weight: bold; color: #5e5e5e;}
+.label-item-img {float: left; width: 50%; text-align: center; padding: 0 5px; min-height: 100px;}
+.label-item-img img {max-width: 100%; vertical-align: middle;}
+.label-item-name {}
